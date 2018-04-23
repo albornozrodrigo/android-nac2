@@ -3,14 +3,20 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="@color/default_bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/insert_menu_item"
+        android:onClick="insert"/>
+
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="TESTE"
-        android:gravity="center"/>
+        android:id="@+id/menuList"></ListView>
 
 </LinearLayout>
