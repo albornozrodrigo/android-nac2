@@ -3,14 +3,14 @@ package br.com.fiap.trabalho.rm79388;
 public class Menu {
     private int id;
     private String name;
-    private String img;
-    private int price;
+    private int img;
+    private double price;
     private int points;
     private int calories;
     private String observations;
 
     public Menu() {}
-    public Menu(int id, String name, String img, int price, int points, int calories, String observations) {
+    public Menu(int id, String name, int img, double price, int points, int calories, String observations) {
         this.id = id;
         this.name = name;
         this.img = img;
@@ -36,19 +36,19 @@ public class Menu {
         this.name = name;
     }
 
-    public String getImg() {
+    public int getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(int img) {
         this.img = img;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

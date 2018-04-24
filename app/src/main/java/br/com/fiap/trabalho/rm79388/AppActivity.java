@@ -39,8 +39,8 @@ public class AppActivity extends AppCompatActivity {
 
     private void loadList() {
         this.menuList = this.menuService.list();
-        ArrayAdapter<Menu> adapter = new ArrayAdapter<Menu>(this, android.R.layout.simple_expandable_list_item_1, this.menuList);
-        this.menuListView = findViewById(R.id.menuListView);
+
+        MenuAdapter adapter = new MenuAdapter(this, this.menuList);
         this.menuListView.setAdapter(adapter);
     }
 

@@ -1,9 +1,14 @@
 package br.com.fiap.trabalho.rm79388;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import java.io.InputStream;
 
 public class RegisterMenuActivity extends AppCompatActivity {
     EditText name;
@@ -12,6 +17,8 @@ public class RegisterMenuActivity extends AppCompatActivity {
     EditText calories;
     EditText observations;
     MenuService menuService;
+
+    public static final int PICK_IMAGE = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +42,7 @@ public class RegisterMenuActivity extends AppCompatActivity {
 
         Menu menu = new Menu();
         menu.setName(name);
-        menu.setPrice(Integer.parseInt(price));
+        menu.setPrice(Double.parseDouble(price));
         menu.setPoints(Integer.parseInt(points));
         menu.setCalories(Integer.parseInt(calories));
         menu.setObservations(observations);
@@ -43,5 +50,11 @@ public class RegisterMenuActivity extends AppCompatActivity {
         this.menuService.insert(menu);
 
         finish();
+    }
+
+    public void pickImage() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_IMAGE);
     }
 }

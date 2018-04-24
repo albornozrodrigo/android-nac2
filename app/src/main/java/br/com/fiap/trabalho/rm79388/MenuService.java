@@ -31,10 +31,11 @@ public class MenuService extends Database {
             Menu menu = new Menu();
             menu.setId(cursor.getInt(0));
             menu.setName(cursor.getString(1));
-            menu.setPrice(cursor.getInt(2));
-            menu.setPoints(cursor.getInt(3));
-            menu.setCalories(cursor.getInt(4));
-            menu.setObservations(cursor.getString(5));
+            menu.setImg(cursor.getInt(2));
+            menu.setPrice(cursor.getInt(3));
+            menu.setPoints(cursor.getInt(4));
+            menu.setCalories(cursor.getInt(5));
+            menu.setObservations(cursor.getString(6));
 
             list.add(menu);
         }
@@ -48,6 +49,7 @@ public class MenuService extends Database {
         ContentValues cv = new ContentValues();
         cv.put("name", menu.getName());
         cv.put("price", menu.getPrice());
+        cv.put("img", menu.getImg());
         cv.put("points", menu.getPoints());
         cv.put("calories", menu.getCalories());
         cv.put("observations", menu.getObservations());
