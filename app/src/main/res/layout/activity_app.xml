@@ -13,10 +13,9 @@
         android:text="@string/insert_menu_item"
         android:onClick="insert"/>
 
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/menuList"></ListView>
+        android:id="@+id/menuListView"></ListView>
 
 </LinearLayout>
