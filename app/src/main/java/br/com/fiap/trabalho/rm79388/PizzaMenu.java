@@ -1,17 +1,16 @@
 package br.com.fiap.trabalho.rm79388;
 
-public class Menu {
+public class PizzaMenu {
     private int id;
     private String name;
     private int img;
-    private double price;
+    private int price;
     private int points;
     private int calories;
     private String observations;
 
-    public Menu() {}
-    public Menu(int id, String name, int img, double price, int points, int calories, String observations) {
-        this.id = id;
+    public PizzaMenu() {}
+    public PizzaMenu(String name, int img, int price, int points, int calories, String observations) {
         this.name = name;
         this.img = img;
         this.price = price;
@@ -44,11 +43,11 @@ public class Menu {
         this.img = img;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

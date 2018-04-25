@@ -1,31 +1,30 @@
 package br.com.fiap.trabalho.rm79388;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.view.Menu;
 
-import java.io.InputStream;
-
-public class RegisterMenuActivity extends AppCompatActivity {
+public class RegisterPizzaActivity extends AppCompatActivity {
     EditText name;
     EditText price;
     EditText points;
     EditText calories;
     EditText observations;
-    MenuService menuService;
+    PizzaMenuService pizzaMenuService;
 
     public static final int PICK_IMAGE = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Adicionar pizza");
         setContentView(R.layout.activity_register_menu);
 
-        this.menuService = new MenuService(this);
+        this.pizzaMenuService = new PizzaMenuService(this);
         this.name = findViewById(R.id.name);
         this.price = findViewById(R.id.price);
         this.points = findViewById(R.id.points);
@@ -40,14 +39,14 @@ public class RegisterMenuActivity extends AppCompatActivity {
         String calories = this.calories.getText().toString();
         String observations = this.observations.getText().toString();
 
-        Menu menu = new Menu();
+        PizzaMenu menu = new PizzaMenu();
         menu.setName(name);
-        menu.setPrice(Double.parseDouble(price));
+        menu.setPrice(Integer.parseInt(price));
         menu.setPoints(Integer.parseInt(points));
         menu.setCalories(Integer.parseInt(calories));
         menu.setObservations(observations);
 
-        this.menuService.insert(menu);
+        this.pizzaMenuService.insert(menu);
 
         finish();
     }

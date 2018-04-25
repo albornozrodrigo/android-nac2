@@ -1,18 +1,22 @@
 package br.com.fiap.trabalho.rm79388;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 4000;
+    SharedPreferences storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.storage = getPreferences(MODE_PRIVATE);
+        int time = Integer.parseInt(this.storage.getString("splashScreenTime", "4000"));
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -22,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
                 finish();
             }
-        }, SPLASH_DISPLAY_LENGTH);
+        }, time);
     }
 }

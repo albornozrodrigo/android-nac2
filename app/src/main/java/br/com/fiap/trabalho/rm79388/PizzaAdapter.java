@@ -5,28 +5,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class MenuAdapter extends BaseAdapter {
+public class PizzaAdapter extends BaseAdapter {
     Context context;
-    List<Menu> menu;
+    List<PizzaMenu> pizzaList;
 
-    public MenuAdapter(Context context, List<Menu> menu) {
+    public PizzaAdapter(Context context, List<PizzaMenu> pizzaList) {
         this.context = context;
-        this.menu = menu;
+        this.pizzaList = pizzaList;
     }
 
     @Override
     public int getCount() {
-        return menu.size();
+        return pizzaList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return menu.get(position);
+        return pizzaList.get(position);
     }
 
     @Override
@@ -37,16 +36,16 @@ public class MenuAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layout = LayoutInflater.from(context);
-        Menu m = menu.get(position);
+        PizzaMenu m = pizzaList.get(position);
         View v = layout.inflate(R.layout.listview_pizza, null);
 
-        //ImageView img = v.findViewById(R.id.img);
         TextView name = v.findViewById(R.id.name);
         TextView price = v.findViewById(R.id.price);
+        TextView observations = v.findViewById(R.id.observations);
 
-        //img.setImageResource(m.getImg());
         name.setText(m.getName());
         price.setText(String.format("R$ " + m.getPrice()));
+        observations.setText(m.getObservations());
 
         return v;
     }

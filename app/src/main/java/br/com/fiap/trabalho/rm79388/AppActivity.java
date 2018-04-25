@@ -3,27 +3,35 @@ package br.com.fiap.trabalho.rm79388;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.List;
 
 public class AppActivity extends AppCompatActivity {
-    Menu menu;
-    MenuService menuService;
+    PizzaMenu pizzaMenu;
+    PizzaMenuService pizzaMenuService;
     ListView menuListView;
-    List<Menu> menuList;
+    List<PizzaMenu> pizzaMenuList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app);
 
-        this.menuService = new MenuService(this);
+        this.pizzaMenuService = new PizzaMenuService(this);
         this.menuListView = findViewById(R.id.menuListView);
         this.loadList();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_app, menu);
+        return true;
     }
 
     @Override
@@ -33,15 +41,19 @@ public class AppActivity extends AppCompatActivity {
     }
 
     public void insert(View view) {
-        Intent it = new Intent(this, RegisterMenuActivity.class);
+        Intent it = new Intent(this, RegisterPizzaActivity.class);
         startActivity(it);
     }
 
     private void loadList() {
-        this.menuList = this.menuService.list();
+        this.pizzaMenuList = this.pizzaMenuService.list();
 
-        MenuAdapter adapter = new MenuAdapter(this, this.menuList);
+        PizzaAdapter adapter = new PizzaAdapter(this, this.pizzaMenuList);
         this.menuListView.setAdapter(adapter);
     }
 
+    public void goToConfig(MenuItem item) {
+        Intent it = new Intent(this, ConfigActivity.class);
+        startActivity(it);
+    }
 }
