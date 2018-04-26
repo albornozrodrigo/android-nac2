@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://D:\android-nac2\RM79388.iml" filepath="D:\android-nac2\RM79388.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-nac2.iml" filepath="$PROJECT_DIR$/android-nac2.iml" />
+      <module fileurl="file://D:\android-nac2\android-nac2.iml" filepath="D:\android-nac2\android-nac2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\android-nac2\app\app.iml" filepath="D:\android-nac2\app\app.iml" />
     </modules>
   </component>
 </project>
