@@ -3,22 +3,29 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_bg_color"
-    android:padding="16dp">
+    android:padding="@dimen/default_layout_padding">
 
     <EditText
         android:inputType="number"
         android:maxLength="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tempo do splashscreen"
+        android:hint="@string/tempo_do_splashscreen"
         android:id="@+id/splashScreenTime"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <Button
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/default_margin_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="salvar"
+        android:text="@string/salvar"
         android:onClick="save"/>
+
+    <Button
+        android:layout_marginTop="@dimen/default_margin_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        android:onClick="close"/>
 
 </LinearLayout>

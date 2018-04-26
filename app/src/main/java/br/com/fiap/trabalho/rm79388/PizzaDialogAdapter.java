@@ -48,10 +48,10 @@ public class PizzaDialogAdapter extends BaseAdapter {
         TextView observations = v.findViewById(R.id.observations);
 
         name.setText(p.getName());
-        price.setText(String.format("R$ " + p.getPrice()));
-        img.setImageResource(p.getImg());
-        points.setText(String.format("Avaliação: " + p.getPoints()));
-        calories.setText(String.format("Calorias: " + p.getCalories()));
+        price.setText(String.format(context.getString(R.string.real) + p.getPrice()));
+        img.setImageResource(R.drawable.pizza);
+        points.setText(String.format(context.getString(R.string.avaliacao) + p.getPoints()));
+        calories.setText(String.format(context.getString(R.string.calorias) + p.getCalories()));
         observations.setText(p.getObservations());
 
         return v;

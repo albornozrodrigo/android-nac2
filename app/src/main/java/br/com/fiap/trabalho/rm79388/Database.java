@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class Database extends SQLiteOpenHelper {
-    public static final String DB = "RM79388";
+    public static final String DB = String.valueOf(R.string.db_name);
     public static final int VERSION = 1;
 
     public Database(Context context) {

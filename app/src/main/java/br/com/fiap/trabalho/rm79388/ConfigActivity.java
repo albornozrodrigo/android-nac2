@@ -22,7 +22,7 @@ public class ConfigActivity extends AppCompatActivity {
 
         this.storage = getSharedPreferences(String.valueOf(R.string.app_name), MODE_PRIVATE);
         this.splashScreenTime = findViewById(R.id.splashScreenTime);
-        int time = Integer.parseInt(this.storage.getString("splashScreenTime", "4")) / 1000;
+        int time = Integer.parseInt(this.storage.getString(getString(R.string.splashScreenTimeKey), "4")) / 1000;
         this.splashScreenTime.setText(String.valueOf(time));
     }
 
@@ -32,17 +32,21 @@ public class ConfigActivity extends AppCompatActivity {
         int splashTime = Integer.parseInt(this.splashScreenTime.getText().toString());
 
         if(splashTime < 3 || splashTime > 30) {
-            Toast.makeText(this, "O tempo não pode ser menor que 3 segundos e nem maior que 30 segundos", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.splashWarningText, Toast.LENGTH_LONG).show();
         } else {
             String time = String.valueOf(splashTime * 1000);
 
-            e.putString("splashScreenTime", time);
+            e.putString(getString(R.string.splashScreenTimeKey), time);
 
             e.commit();
 
-            Toast.makeText(this, "Configuração salva com sucesso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.splashScreenSuccessText, Toast.LENGTH_SHORT).show();
 
             finish();
         }
+    }
+
+    public void close(View view) {
+        finish();
     }
 }

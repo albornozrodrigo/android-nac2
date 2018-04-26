@@ -21,7 +21,7 @@ public class RegisterPizzaActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Adicionar pizza");
+        setTitle(getString(R.string.addPizza));
         setContentView(R.layout.activity_register_menu);
 
         LogService log = new LogService(this);
@@ -35,7 +35,7 @@ public class RegisterPizzaActivity extends AppCompatActivity {
         this.observations = findViewById(R.id.observations);
     }
 
-    public void salvar(View view) {
+    public void save(View view) {
         String name = this.name.getText().toString();
         String price = this.price.getText().toString();
         String points = this.points.getText().toString();
@@ -56,7 +56,11 @@ public class RegisterPizzaActivity extends AppCompatActivity {
 
     public void pickImage() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
+        intent.setType(getString(R.string.image_type));
         startActivityForResult(intent, PICK_IMAGE);
+    }
+
+    public void close(View view) {
+        finish();
     }
 }

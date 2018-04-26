@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
         this.login = findViewById(R.id.login);
         this.password = findViewById(R.id.password);
-        this.loginPass = "fiap";
+        this.loginPass = getString(R.string.login_password);
     }
 
     public void login(View view) {

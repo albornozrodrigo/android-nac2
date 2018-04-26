@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         log.insert(this.getClass().getSimpleName());
 
         this.storage = getSharedPreferences(String.valueOf(R.string.app_name), MODE_PRIVATE);
-        int time = Integer.parseInt(this.storage.getString("splashScreenTime", "4000"));
+        int time = Integer.parseInt(this.storage.getString(getString(R.string.splashScreenTimeKey), "4000"));
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

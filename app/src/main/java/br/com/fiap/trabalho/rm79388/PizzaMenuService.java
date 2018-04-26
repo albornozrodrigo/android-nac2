@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaMenuService extends Database {
-    public static final String TABLE = "menu";
+    public static final String TABLE = "menu"; //Dava erro ao extrair
 
     public PizzaMenuService(Context context) {
         super(context);
@@ -62,7 +62,7 @@ public class PizzaMenuService extends Database {
         ContentValues cv = new ContentValues();
         cv.put("name", pizzaMenu.getName());
         cv.put("price", pizzaMenu.getPrice());
-        cv.put("img", R.drawable.pizza);
+        cv.put("img", pizzaMenu.getImg());
         cv.put("points", pizzaMenu.getPoints());
         cv.put("calories", pizzaMenu.getCalories());
         cv.put("observations", pizzaMenu.getObservations());

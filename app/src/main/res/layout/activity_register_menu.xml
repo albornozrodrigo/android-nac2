@@ -4,52 +4,59 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_bg_color"
-    android:padding="16dp">
+    android:padding="@dimen/default_layout_padding">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:hint="@string/name_placeholder"
         android:id="@+id/name"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Preço"
+        android:hint="@string/preco"
         android:id="@+id/price"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Avaliação"
+        android:hint="@string/avaliacao2"
         android:id="@+id/points"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Calorias"
+        android:hint="@string/calorias2"
         android:id="@+id/calories"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <EditText
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Observações (ingredientes, restrições, etc.)"
+        android:hint="@string/observacoes_ingredientes_restricoes_etc"
         android:id="@+id/observations"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <Button
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/default_margin_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="salvar"
-        android:onClick="salvar"/>
+        android:text="@string/salvar"
+        android:onClick="save"/>
+
+    <Button
+        android:layout_marginTop="@dimen/default_margin_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        android:onClick="close"/>
 
 </LinearLayout>

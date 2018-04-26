@@ -3,37 +3,37 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_bg_color"
-    android:padding="16dp">
+    android:padding="@dimen/default_layout_padding">
 
     <ImageView
         android:id="@+id/splashscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/default_margin_bottom"
         android:layout_gravity="center"/>
 
     <EditText
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login"
+        android:hint="@string/login"
         android:id="@+id/login"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:id="@+id/password"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="@dimen/default_margin_bottom"/>
 
     <Button
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/default_margin_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/entrar"
         android:onClick="login"/>
 
 </LinearLayout>

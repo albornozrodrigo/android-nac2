@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 public class LogService extends Database {
-    public static final String TABLE = "log";
+    public static final String TABLE = "log"; //dava erro ao extrair
 
     public LogService(Context context) {
         super(context);
@@ -16,8 +16,6 @@ public class LogService extends Database {
     @Override
     public void onCreate(SQLiteDatabase db) {
         super.onCreate(db);
-        //String sql = "CREATE TABLE " + TABLE + " (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `description` TEXT, `date` INTEGER);";
-        //db.execSQL(sql);
     }
 
     public void insert(String activity) {

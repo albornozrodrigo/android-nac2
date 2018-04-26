@@ -2,13 +2,13 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="@dimen/default_layout_padding"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:layout_width="92dp"
-        android:layout_height="92dp"
+        android:layout_width="@dimen/img_pizza_wh"
+        android:layout_height="@dimen/img_pizza_wh"
         android:id="@+id/img"
         android:src="@drawable/pizza"
         tools:src="@drawable/pizza"/>
@@ -18,42 +18,42 @@
         android:layout_height="wrap_content"
         android:id="@+id/name"
         android:layout_toRightOf="@id/img"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        tools:text="Pizza Vegana"/>
+        android:layout_marginLeft="@dimen/default_margin_bottom"
+        android:layout_marginTop="@dimen/default_margin_bottom"
+        tools:text="@string/pizza_name_default_text"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/price"
         android:layout_toRightOf="@id/img"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
-        tools:text="R$ 36,90"/>
+        android:layout_marginLeft="@dimen/default_margin_bottom"
+        android:layout_marginTop="@dimen/margin_top_price"
+        tools:text="@string/pizza_price_default_text"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/points"
         android:layout_toRightOf="@id/img"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="48dp"
-        tools:text="Avaliação"/>
+        android:layout_marginLeft="@dimen/default_margin_bottom"
+        android:layout_marginTop="@dimen/margin_top_points"
+        tools:text="@string/pizza_name_default_text"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/calories"
         android:layout_toRightOf="@id/img"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="68dp"
-        tools:text="Calorias"/>
+        android:layout_marginLeft="@dimen/default_margin_bottom"
+        android:layout_marginTop="@dimen/margin_top_calories"
+        tools:text="@string/calorias2"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/observations"
-        android:layout_marginTop="98dp"
-        tools:text="Pizza Vegana"/>
+        android:layout_marginTop="@dimen/margin_top_obs"
+        tools:text="@string/pizza_obs_default_text"/>
 
 </RelativeLayout>
