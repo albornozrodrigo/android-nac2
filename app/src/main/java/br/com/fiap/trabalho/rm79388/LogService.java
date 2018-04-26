@@ -16,8 +16,8 @@ public class LogService extends Database {
     @Override
     public void onCreate(SQLiteDatabase db) {
         super.onCreate(db);
-        String sql = "CREATE TABLE " + TABLE + " (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `description` TEXT, `date` INTEGER);";
-        db.execSQL(sql);
+        //String sql = "CREATE TABLE " + TABLE + " (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `description` TEXT, `date` INTEGER);";
+        //db.execSQL(sql);
     }
 
     public void insert(String activity) {

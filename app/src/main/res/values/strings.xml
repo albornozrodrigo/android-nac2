@@ -2,4 +2,5 @@
     <string name="app_name">Pizzaria</string>
     <string name="insert_menu_item">Inserir item no cardápio</string>
     <string name="login_password_incorrect">Login ou senha incorretos</string>
+    <string name="close">Fechar</string>
 </resources>

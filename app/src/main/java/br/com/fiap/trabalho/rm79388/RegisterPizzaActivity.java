@@ -24,6 +24,9 @@ public class RegisterPizzaActivity extends AppCompatActivity {
         setTitle("Adicionar pizza");
         setContentView(R.layout.activity_register_menu);
 
+        LogService log = new LogService(this);
+        log.insert(this.getClass().getSimpleName());
+
         this.pizzaMenuService = new PizzaMenuService(this);
         this.name = findViewById(R.id.name);
         this.price = findViewById(R.id.price);

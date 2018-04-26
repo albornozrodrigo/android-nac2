@@ -17,6 +17,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        LogService log = new LogService(this);
+        log.insert(this.getClass().getSimpleName());
+
         this.login = findViewById(R.id.login);
         this.password = findViewById(R.id.password);
         this.loginPass = "fiap";

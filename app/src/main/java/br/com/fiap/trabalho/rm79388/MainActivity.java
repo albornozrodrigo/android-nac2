@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LogService log = new LogService(this);
+        log.insert(this.getClass().getSimpleName());
+
         this.storage = getSharedPreferences(String.valueOf(R.string.app_name), MODE_PRIVATE);
         int time = Integer.parseInt(this.storage.getString("splashScreenTime", "4000"));
 

@@ -17,8 +17,7 @@ public class PizzaMenuService extends Database {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE " + TABLE + " (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `img` TEXT, `price` INTEGER, `points` INTEGER, `calories` INTEGER, `observations` TEXT);";
-        db.execSQL(sql);
+        super.onCreate(db);
     }
 
     public List<PizzaMenu> list() {
@@ -40,12 +39,12 @@ public class PizzaMenuService extends Database {
             list.add(pizzaMenu);
         }
 
-        PizzaMenu p1 = new PizzaMenu("Pizza Chilena", R.drawable.pizza, 40, 10, 800, "Pizza vegana");
-        PizzaMenu p2 = new PizzaMenu("Mix de Cogumelos", R.drawable.pizza, 35, 10, 600, "Pizza vegana");
-        PizzaMenu p3 = new PizzaMenu("Chandler Bing", R.drawable.pizza, 38, 10, 690, "Pizza vegana");
-        PizzaMenu p4 = new PizzaMenu("Ross Geller", R.drawable.pizza, 46, 10, 598, "Pizza vegana");
-        PizzaMenu p5 = new PizzaMenu("Barney Stinson", R.drawable.pizza, 29, 10, 780, "Pizza vegana");
-        PizzaMenu p6 = new PizzaMenu("Joey Tribbiany", R.drawable.pizza, 43, 10, 650, "Pizza vegana");
+        PizzaMenu p1 = new PizzaMenu("Pizza Chilena", R.drawable.pizza, 40, 10, 800, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
+        PizzaMenu p2 = new PizzaMenu("Mix de Cogumelos", R.drawable.pizza, 35, 10, 600, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
+        PizzaMenu p3 = new PizzaMenu("Chandler Bing", R.drawable.pizza, 38, 10, 690, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
+        PizzaMenu p4 = new PizzaMenu("Ross Geller", R.drawable.pizza, 46, 10, 598, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
+        PizzaMenu p5 = new PizzaMenu("Barney Stinson", R.drawable.pizza, 29, 10, 780, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
+        PizzaMenu p6 = new PizzaMenu("Joey Tribbiany", R.drawable.pizza, 43, 10, 650, "Pizza vegana, não tem lactose e nem nada de origem animal. Contém glúten.");
 
         list.add(p1);
         list.add(p2);
@@ -63,7 +62,7 @@ public class PizzaMenuService extends Database {
         ContentValues cv = new ContentValues();
         cv.put("name", pizzaMenu.getName());
         cv.put("price", pizzaMenu.getPrice());
-        cv.put("img", pizzaMenu.getImg());
+        cv.put("img", R.drawable.pizza);
         cv.put("points", pizzaMenu.getPoints());
         cv.put("calories", pizzaMenu.getCalories());
         cv.put("observations", pizzaMenu.getObservations());

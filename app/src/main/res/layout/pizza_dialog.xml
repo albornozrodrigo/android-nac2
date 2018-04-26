@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:id="@+id/img"
+        android:src="@drawable/pizza"
+        tools:src="@drawable/pizza"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        tools:text="Pizza Vegana"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/price"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        tools:text="R$ 36,90"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/points"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        tools:text="Avaliação"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calories"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        tools:text="Calorias"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observations"
+        android:layout_marginTop="98dp"
+        tools:text="Pizza Vegana"/>
+
+</RelativeLayout>
